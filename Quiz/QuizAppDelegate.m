@@ -7,12 +7,20 @@
 //
 
 #import "QuizAppDelegate.h"
+#import "QuizViewController.h"
 
 @implementation QuizAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
+    
+    QuizViewController *qvc = [[QuizViewController alloc] initWithNibName:@"QuizViewController" bundle:nil];
+    self.window.rootViewController = qvc;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
